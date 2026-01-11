@@ -1,0 +1,29 @@
+# docker-compose.yml
+services:
+  fan-backend:
+    build: .
+    container_name: fan-backend
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      # Physical header pin (default 33). Used to infer a default PWM channel where possible.
+      - PWM_PIN=33
+
+      # Sysfs PWM selection (recommended to set explicitly).
+      # For GPIO13 (Pin 33) this is commonly PWM1 => channel 1 when using pwm-2chan overlay.
+      - PWM_CHIP=pwmchip0
+      - PWM_CHANNEL=1
+
+      # PWM frequency (Hz), typical quiet default.
+      - PWM_FREQUENCY_HZ=25000
+
+      # Data dir for SQLite
+      - DATA_DIR=/data
+
+      # Logging
+      - LOG_LEVEL=INFO
+    volumes:
+      - ./data:/data
+      - /sys/class/thermal:/sys/class/thermal:ro
+      - /sys/class/pwm:/sys/class/pwm:rw
