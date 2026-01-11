@@ -1,0 +1,22 @@
+# Ignore custom files/directories
+.jh*
+.DS_Store
+.git/
+.git/*
+frontend/node_modules
+frontend/dist
+frontend/pnpm-lock.yaml
+
+*.png
+node_modules
+pnpm-lock.yaml
+dist
+
+venv
+.idea
+.venv
+.direnv
+.envrc
+.env
+
+*/__pycache__

@@ -109,3 +109,4 @@ Useful host checks:
 ls -l /sys/class/thermal/thermal_zone*/temp
 ls -l /sys/class/pwm
 ```
+

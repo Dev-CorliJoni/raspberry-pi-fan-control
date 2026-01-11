@@ -1,6 +1,5 @@
 # ha-addon-repo/fan_pwm_backend/README.md
-
-## Fan PWM Backend Add-on
+# Raspberry pi fan conrol Add-on
 
 After installation:
 - Open Web UI: `http://<homeassistant>:8099/docs`
