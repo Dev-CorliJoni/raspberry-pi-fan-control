@@ -5,6 +5,8 @@ slug: "fan_pwm_backend"
 description: "Hardware PWM fan control backend with curves and sensors"
 arch:
   - aarch64
+build_from:
+  aarch64: "ghcr.io/home-assistant/aarch64-base:3.19"
 init: false
 startup: services
 boot: auto
