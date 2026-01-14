@@ -1,5 +1,5 @@
 # ha-addon-repo/fan_pwm_backend/Dockerfile
-ARG BUILD_FROM
+ARG BUILD_FROM=ghcr.io/home-assistant/aarch64-base:3.19
 FROM ${BUILD_FROM}
 
 # Home Assistant add-on tutorial recommends run.sh using bashio.
@@ -18,8 +18,11 @@ COPY requirements.txt /app/requirements.txt
 COPY run.sh /run.sh
 COPY README.md /app/README.md
 
-RUN pip3 install --no-cache-dir -r /app/requirements.txt \
+RUN python3 -m venv /venv \
+  && /venv/bin/pip install --no-cache-dir -r /app/requirements.txt \
   && chmod a+x /run.sh
+
+ENV PATH="/venv/bin:$PATH"
 
 EXPOSE 80
 

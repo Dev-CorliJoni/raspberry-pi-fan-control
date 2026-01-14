@@ -1,6 +1,6 @@
 # ha-addon-repo/fan_pwm_backend/config.yaml
 name: "Raspberry pi fan conrol"
-version: "1.0.0"
+version: "1.0.1"
 slug: "fan_pwm_backend"
 description: "Hardware PWM fan control backend with curves and sensors"
 arch:
