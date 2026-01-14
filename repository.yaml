@@ -1,0 +1,4 @@
+# ha-addon-repo/repository.yaml
+name: "Raspberry pi fan conrol"
+url: "https://github.com/Dev-CorliJoni/raspberry-pi-fan-control"
+maintainer: "Jonathan Haueis"

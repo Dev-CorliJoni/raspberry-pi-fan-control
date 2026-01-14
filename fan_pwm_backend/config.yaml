@@ -1,0 +1,21 @@
+# ha-addon-repo/fan_pwm_backend/config.yaml
+name: "Raspberry pi fan conrol"
+version: "1.0.0"
+slug: "fan_pwm_backend"
+description: "Hardware PWM fan control backend with curves and sensors"
+arch:
+  - aarch64
+init: false
+startup: services
+boot: auto
+ports:
+  80/tcp: 8099
+ports_description:
+  80/tcp: "Raspberry pi fan conrol API"
+# Keep minimal permissions by default. If /setup/next-step indicates missing write access to PWM sysfs,
+# you may need to enable additional access depending on HAOS security restrictions.
+# full_access: true
+# privileged:
+#   - SYS_ADMIN
+map:
+  - data:rw
